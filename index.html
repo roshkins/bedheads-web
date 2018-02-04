@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BedHeads Web</title>
+</head>
+
+<body>
+  <h1> Call BedHeads now: 413-344-2337.</h1>
+  <h2> Keep people alive, off streets, and out of jail, by finding more beds faster. </h2>
+  <div id="beds"></div>
+  <script type="text/javascript">
+  function updateCount() {
+  fetch("https://bedheads-api.herokuapp.com/api/facilities")
+    .then(res => res.json())
+    .then(facilities => {
+      const htmlFacilites = facilities.map(
+        facility =>
+          "<tr><td>" +
+          facility.name +
+          "</td><td>" +
+          facility.bedsAvailable +
+          "</td></tr>"
+      );
+      document.querySelector("#beds").innerHTML =
+        "<table> <tr><th>Hospital Name</th><th>Bed Count</th></tr>" +
+        htmlFacilites.join("\n") +
+        "</table>";
+    });
+}
+
+setInterval(updateCount, 500);
+</script>
+</body>
+
+</html>
