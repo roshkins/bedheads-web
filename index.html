@@ -4,11 +4,50 @@
 <head>
   <meta charset="utf-8">
   <title>BedHeads Web</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    th {
+      font-size: 30pt
+    }
+
+    td {
+      font-size: 28pt
+    }
+
+    body {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      font-size: 18pt;
+    }
+
+    p {
+      font-size: 18pt
+    }
+  </style>
 </head>
 
 <body>
-  <h1> Call BedHeads now: 413-344-2337.</h1>
+  <h1> Call BedHeads now: <a href="tel:+14133442337">413-344-2337</a>.</h1>
   <h2> Keep people alive, off streets, and out of jail, by finding more beds faster. </h2>
+  <p>When a hospital runs out of beds, a person either gets denied treatment, may become homeless, or go to jail. Right now, hospitals have to spend 20+ minutes per patient calling around to see if any beds are available.
+    <b>BedHeads</b> does this coordination for doctors in the medium they already use -- their analog phone. They do not need to learn to use a computer.</p>
+
+  <p>Caregivers give a pin to identify themselves, and can update their bed count and hear availability of others.</p>
+
+  <p>Patients can use this data to find hospitals with beds, avoiding delays and costly transfers.</p>
+
+  <h2>Future plans:</h2>
+  <ul>
+    <li>Call once a day so they don't forget to update the bedCount.</li>
+    <li>Keep track of different types of beds, like Medical &amp; Psychiatry, or youth.</li>
+    <li>Use machine learning to predict where beds might free up.</li>
+  </ul>
+
+  <h2>This data updates live:</h2>
   <div id="beds"></div>
   <script type="text/javascript">
   function updateCount() {
